@@ -1,0 +1,56 @@
+CREATE TABLE clientes (
+  cliente_id INT,
+  tarjeta VARCHAR(10),
+  banco VARCHAR(50),
+  sucursal_id INT,
+  fecha_vencimiento VARCHAR(10),
+  saldo DECIMAL(10, 2),
+  asiento VARCHAR(3),
+  clase VARCHAR(20),
+  motivo_cancelacion VARCHAR(100),
+  vuelo_id INT,
+  fecha_vuelo VARCHAR(10),
+  hora_salida VARCHAR(8),
+  hora_llegada VARCHAR(8),
+  num_pasajeros INT,
+  estado_vuelo VARCHAR(20),
+  origen VARCHAR(50),
+  destino VARCHAR(50),
+  PRIMARY KEY (cliente_id, tarjeta)
+);
+
+CREATE TABLE bancos (
+  banco_id INT,
+  nombre VARCHAR(50),
+  PRIMARY KEY (banco_id)
+);
+UPDATE clientes
+SET apellido = 'Castañeda'
+WHERE cliente_id = 4;
+UPDATE clientes
+SET direccion = 'CALLE IV #405 COL. ANÁHUAC'
+WHERE cliente_id = 1;
+INSERT INTO bancos (banco_id, nombre)
+VALUES (6, 'Banorte');
+
+INSERT INTO bancos (banco_id, nombre)
+VALUES (7, 'Banco del Bajío');
+DELETE FROM clientes
+WHERE apellido = 'CASTAÑEDA' AND nombre = 'MARTÍN';
+
+
+INSERT INTO clientes (cliente_id, tarjeta, banco, sucursal_id, fecha_vencimiento, saldo, asiento, clase, motivo_cancelacion, vuelo_id, fecha_vuelo, hora_salida, hora_llegada, num_pasajeros, estado_vuelo, origen, destino)
+VALUES (1, 'MC', 'Santander', 456, '11/17', 2830.15, '10A', 'Turista', NULL, 4058, '05/08/2012', '10:00:00', '12:30:00', 100, 'A TIEMPO', 'MONTERREY', 'CANCÚN');
+
+INSERT INTO clientes (cliente_id, tarjeta, banco, sucursal_id, fecha_vencimiento, saldo, asiento, clase, motivo_cancelacion, vuelo_id, fecha_vuelo, hora_salida, hora_llegada, num_pasajeros, estado_vuelo, origen, destino)
+VALUES (2, 'MC', 'Santander', 901, '02/20', 2830.15, '10B', 'Turista', NULL, 4058, '05/08/2012', '10:00:00', '12:30:00', 100, 'A TIEMPO', 'MONTERREY', 'CANCÚN');
+
+INSERT INTO clientes (cliente_id, tarjeta, banco, sucursal_id, fecha_vencimiento, saldo, asiento, clase, motivo_cancelacion, vuelo_id, fecha_vuelo, hora_salida, hora_llegada, num_pasajeros, estado_vuelo, origen, destino)
+VALUES (3, 'MC', 'Scotiabank', 442, '04/18', 2830.15, '11A', 'Turista', NULL, 4058, '05/08/2012', '10:00:00', '12:30:00', 100, 'A TIEMPO', 'MONTERREY', 'CANCÚN');
+
+INSERT INTO clientes (cliente_id, tarjeta, banco, sucursal_id, fecha_vencimiento, saldo, asiento, clase, motivo_cancelacion, vuelo_id, fecha_vuelo, hora_salida, hora_llegada, num_pasajeros, estado_vuelo, origen, destino)
+VALUES (4, 'VISA', 'Bancomer', 234, '05/19', 6356.34, '1A', '1ra clase', 'AVISAR DE CANCELACION', 4060, '06/08/2012', '16:00:00', '17:00:00', 20, 'CANCELADO', 'GUADALAJARA', 'TOLUCA');
+
+INSERT INTO clientes (cliente_id, tarjeta, banco, sucursal_id, fecha_vencimiento, saldo, asiento, clase, motivo_cancelacion, vuelo_id, fecha_vuelo, hora_salida, hora_llegada, num_pasajeros, estado_vuelo, origen, destino)
+VALUES (5, 'AMEX', 'Banamex', 102, '07/17', 2830.15, '12B', 'Turista', NULL, 4059, '05/08/2012', '08:00:00', '10:00:00', 50, 'RETRASADO', 'DF', 'HOUSTON');
+

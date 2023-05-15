@@ -1,0 +1,62 @@
+-- Creación de la tabla Juguete
+CREATE TABLE Juguete (
+    IdJuguete INT PRIMARY KEY,
+    Descripcion VARCHAR(50),
+    Genero VARCHAR(10),
+    EdadMinima INT,
+    EdadMaxima INT,
+    Existencia INT
+);
+
+-- Creación del cursor que incluye solo juguetes de ambos géneros
+DELIMITER //
+
+CREATE PROCEDURE ProcesarJuguetesAmbosGeneros()
+BEGIN
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE juguete_id INT;
+    DECLARE juguete_existencia INT;
+
+    DECLARE cursor_juguetes CURSOR FOR
+        SELECT IdJuguete, Existencia
+        FROM Juguete
+        WHERE Genero = 'Ambos';
+
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    OPEN cursor_juguetes;
+
+    read_loop: LOOP
+        FETCH cursor_juguetes INTO juguete_id, juguete_existencia;
+
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+
+        IF juguete_existencia >= 8 AND juguete_existencia <= 10 THEN
+            UPDATE Juguete
+            SET Existencia = Existencia + (Existencia * 0.1)
+            WHERE IdJuguete = juguete_id;
+        END IF;
+    END LOOP;
+
+    CLOSE cursor_juguetes;
+END//
+
+DELIMITER ;
+
+-- Creación de la tabla Auditoria
+CREATE TABLE Auditoria (
+    id INT PRIMARY KEY,
+    descripcion VARCHAR(100)
+);
+
+-- Creación del trigger que inserta un registro en la tabla Auditoria
+DELIMITER //
+
+CREATE TRIGGER InsertarAuditoria AFTER INSERT ON Juguete
+FOR EACH ROW
+BEGIN
+    INSERT INTO Auditoria (id, descripcion)
+    VALUES (NEW.IdJuguete, 'Nuevo juguete insertado');
+END;

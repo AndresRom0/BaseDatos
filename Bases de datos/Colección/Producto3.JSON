@@ -1,0 +1,13 @@
+CREATE TABLE Producto_Terminado (
+  IdProductoTerminado INT PRIMARY KEY,
+  NombreProducto VARCHAR(255)
+);
+CREATE TABLE Parte (
+  IdParte INT PRIMARY KEY,
+  Nombre VARCHAR(255),
+  Cantidad INT,
+  IdProductoTerminado INT,
+  FOREIGN KEY (IdProductoTerminado) REFERENCES Producto_Terminado(IdProductoTerminado)
+);
+ALTER TABLE Parte
+ADD CONSTRAINT FK_Parte_Producto_Terminado FOREIGN KEY (IdProductoTerminado) REFERENCES Producto_Terminado(IdProductoTerminado);

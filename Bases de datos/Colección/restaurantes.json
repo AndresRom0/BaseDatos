@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "6461b232bc48cf1bcab993a3"
+  },
+  "nombre": "Papa John's",
+  "calle": "Av. Morones Prieto",
+  "codigo_postal": "64710"
+},{
+  "_id": {
+    "$oid": "6461b240bc48cf1bcab993a4"
+  },
+  "nombre": "Domino's Pizza",
+  "calle": "Av. Constitución",
+  "codigo_postal": "64000"
+},{
+  "_id": {
+    "$oid": "6461b248bc48cf1bcab993a5"
+  },
+  "nombre": "Wendy's",
+  "calle": "Av. Francisco I. Madero",
+  "codigo_postal": "64590"
+},{
+  "_id": {
+    "$oid": "6461b251bc48cf1bcab993a6"
+  },
+  "nombre": "Church's Chicken",
+  "calle": "Av. Miguel Alemán",
+  "codigo_postal": "66612"
+},{
+  "_id": {
+    "$oid": "6461b259bc48cf1bcab993a7"
+  },
+  "nombre": "Pizza Hut",
+  "calle": "Av. Félix U. Gómez",
+  "codigo_postal": "64510",
+  "plaza_comercial": true
+},{
+  "_id": {
+    "$oid": "6461b127cd0bb51e261ee935"
+  },
+  "nombre": "McDonald's",
+  "calle": "Av. Gonzalitos",
+  "codigo_postal": "64610"
+},{
+  "_id": {
+    "$oid": "6461b13acd0bb51e261ee938"
+  },
+  "nombre": "Burger King",
+  "calle": "Av. Revolución",
+  "codigo_postal": "64800"
+},{
+  "_id": {
+    "$oid": "6461b145cd0bb51e261ee93a"
+  },
+  "nombre": "KFC",
+  "calle": "Av. Eugenio Garza Sada",
+  "codigo_postal": "64849"
+},{
+  "_id": {
+    "$oid": "6461b15fcd0bb51e261ee93e"
+  },
+  "nombre": "Subway",
+  "calle": "Av. Alfonso Reyes",
+  "codigo_postal": "64460"
+}]
